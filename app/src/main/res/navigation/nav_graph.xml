@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.familytree.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_to_family_tree"
+            app:destination="@id/navigation_family_tree" />
+        <action
+            android:id="@+id/action_to_family_story"
+            app:destination="@id/navigation_family_story" />
+        <action
+            android:id="@+id/action_to_family_activity"
+            app:destination="@id/navigation_family_activity" />
+        <action
+            android:id="@+id/action_to_calendar"
+            app:destination="@id/navigation_calendar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_family_tree"
+        android:name="com.example.familytree.ui.familytree.FamilyTreeFragment"
+        android:label="@string/menu_family_tree"
+        tools:layout="@layout/fragment_family_tree">
+        <action
+            android:id="@+id/action_to_member_detail"
+            app:destination="@id/navigation_member_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_member_detail"
+        android:name="com.example.familytree.ui.member.MemberDetailFragment"
+        android:label="@string/member_detail"
+        tools:layout="@layout/fragment_member_detail">
+        <argument
+            android:name="memberId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_memberDetail_self"
+            app:destination="@id/navigation_member_detail" />
+        <action
+            android:id="@+id/action_memberDetail_to_familyTree"
+            app:destination="@id/navigation_family_tree">
+            <argument
+                android:name="memberId"
+                app:argType="string"
+                app:nullable="true"
+                android:defaultValue="@null" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_family_story"
+        android:name="com.example.familytree.ui.story.FamilyStoryFragment"
+        android:label="@string/menu_family_story"
+        tools:layout="@layout/fragment_family_story">
+        <action
+            android:id="@+id/action_to_story_detail"
+            app:destination="@id/navigation_story_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_story_detail"
+        android:name="com.example.familytree.ui.story.StoryDetailFragment"
+        android:label="@string/story_detail"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storyId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.familytree.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_family_activity"
+        android:name="com.example.familytree.ui.activity.FamilyActivityFragment"
+        android:label="@string/family_activity"
+        tools:layout="@layout/fragment_family_activity">
+        <action
+            android:id="@+id/action_to_activity_detail"
+            app:destination="@id/navigation_activity_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_activity_detail"
+        android:name="com.example.familytree.ui.activity.ActivityDetailFragment"
+        android:label="@string/activity_detail"
+        tools:layout="@layout/fragment_activity_detail">
+        <argument
+            android:name="activityId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.example.familytree.ui.calendar.CalendarFragment"
+        android:label="@string/worship_calendar"
+        tools:layout="@layout/fragment_calendar" />
+</navigation> 

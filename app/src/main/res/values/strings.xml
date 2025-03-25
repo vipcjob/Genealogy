@@ -1,3 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Genealogy</string>
+    <string name="app_name">家族族谱</string>
+    <string name="app_version">版本 1.0.0</string>
+    
+    <!-- 底部导航 -->
+    <string name="home">首页</string>
+    <string name="family_tree">族谱</string>
+    <string name="family_story">家族故事</string>
+    <string name="family_activity">家族活动</string>
+    <string name="profile">我的</string>
+    
+    <!-- 首页 -->
+    <string name="family_overview">家族概况</string>
+    <string name="generation_count">世代数</string>
+    <string name="member_count">成员数</string>
+    <string name="story_count">故事数</string>
+    <string name="function_modules">功能模块</string>
+    <string name="recent_updates">最近动态</string>
+    <string name="family_album">家族相册</string>
+    <string name="family_statistics">家族统计</string>
+    <string name="add_member">添加成员</string>
+    <string name="worship_calendar">祭祖日历</string>
+    
+    <!-- 族谱页面 -->
+    <string name="search_member">搜索家族成员</string>
+    <string name="view_tree">树状图</string>
+    <string name="view_list">列表</string>
+    <string name="view_generation">世代</string>
+    <string name="view_filter">筛选</string>
+    <string name="all">全部</string>
+    <string name="alive">健在</string>
+    <string name="deceased">已故</string>
+    <string name="male">男性</string>
+    <string name="female">女性</string>
+    <string name="generation_format">第%d代</string>
+    <string name="generation_format_simple">%d代</string>
+    <string name="generation_format_simple_1">一代</string>
+    <string name="generation_format_simple_2">二代</string>
+    <string name="generation_format_simple_3">三代</string>
+    <string name="generation_format_simple_4">四代</string>
+    <string name="generation_format_simple_5">五代</string>
+    <string name="generation_format_simple_6">六代</string>
+    <string name="ancestor">祖先</string>
+    <string name="descendants">后代</string>
+    <string name="current_focus">当前焦点</string>
+    <string name="total_members">总人数</string>
+    <string name="living_members">健在人数</string>
+    <string name="member_count_format">%d人</string>
+    <string name="birth_place">出生地点</string>
+    <string name="death_place">逝世地点</string>
+    <string name="birth_date">出生时间</string>
+    <string name="death_date">逝世时间</string>
+    <string name="age_format">享年%d岁</string>
+    <string name="occupation">职业</string>
+    <string name="education">教育背景</string>
+    <string name="achievements">成就</string>
+    <string name="spouse">配偶</string>
+    <string name="children">子女</string>
+    <string name="children_count_format">子嗣: %d人</string>
+    <string name="edit_info">编辑资料</string>
+    <string name="view_family_tree">查看家系图</string>
+    <string name="no_members_found">未找到成员</string>
+    
+    <!-- 家族故事页面 -->
+    <string name="add_story">添加故事</string>
+    <string name="no_stories_found">暂无故事</string>
+    <string name="all_stories">全部</string>
+    <string name="family_history">家族历史</string>
+    <string name="biography">人物传记</string>
+    <string name="family_values">家风家训</string>
+    <string name="read_count_format">%d次阅读</string>
+    <string name="publish_date_format">发布于 %s</string>
+    <string name="related_members">相关成员</string>
+    <string name="story_detail">故事详情</string>
+    
+    <!-- 活动页面 -->
+    <string name="add_activity">添加活动</string>
+    <string name="date">日期</string>
+    <string name="location">地点</string>
+    <string name="upcoming_activities">即将举行</string>
+    <string name="ongoing_activities">正在进行</string>
+    <string name="completed_activities">已结束</string>
+    <string name="activity_time">活动时间</string>
+    <string name="activity_location">活动地点</string>
+    <string name="activity_organizer">组织者</string>
+    <string name="participate">参与</string>
+    <string name="participant_count_format">%d人参与</string>
+    <string name="worship_activity">祭祖活动</string>
+    <string name="reunion_activity">宗亲聚会</string>
+    <string name="cultural_activity">文化活动</string>
+    <string name="other_activity">其他活动</string>
+    <string name="activity_detail">活动详情</string>
+    
+    <!-- 个人资料页面 -->
+    <string name="my_profile">我的资料</string>
+    <string name="my_family">我的家族</string>
+    <string name="my_favorites">我的收藏</string>
+    <string name="my_contributions">我的贡献</string>
+    <string name="settings">设置</string>
+    <string name="help_feedback">帮助与反馈</string>
+    <string name="about">关于我们</string>
+    <string name="my_family_tree">我的家谱</string>
+    <string name="favorite_stories">收藏故事</string>
+    <string name="contribution_records">贡献记录</string>
+    <string name="notifications">消息通知</string>
+    <string name="privacy_settings">隐私设置</string>
+    <string name="account_security">账号安全</string>
+    <string name="sign_out">退出登录</string>
+    <string name="member_detail">成员详情</string>
+    
+    <!-- 通用 -->
+    <string name="more">更多</string>
+    <string name="view_all">查看全部</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="save">保存</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="search">搜索</string>
+    <string name="reset">重置</string>
+    <string name="apply">应用</string>
+    <string name="days_later_format">%d天后</string>
+    <string name="try_different_filter">请尝试不同的筛选条件</string>
+    
+    <!-- 添加以下字符串到您现有的strings.xml文件中 -->
+    <string name="menu_family_tree">家族树</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_family_story">家族故事</string>
+    <string name="menu_profile">我的</string>
+    <string name="profile_avatar">个人头像</string>
 </resources>

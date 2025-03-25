@@ -7,4 +7,61 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#C5CAE9</color>
+    <color name="accent">#FF4081</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="text_secondary">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#CF6679</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="on_background">#333333</color>
+    <color name="on_surface">#333333</color>
+    <color name="on_error">#FFFFFF</color>
+    
+    <!-- 扩展颜色 -->
+    <color name="text_primary">#333333</color>
+    <color name="text_tertiary">#888888</color>
+    <color name="highlight">#FFB100</color>
+    <color name="highlight_background">#FFFAF0</color>
+    <color name="success">#4CAF50</color>
+    <color name="success_light">#E8F5E9</color>
+    <color name="warning">#FF9800</color>
+    <color name="warning_light">#FFF3E0</color>
+    <color name="female">#E91E63</color>
+    <color name="male">#2196F3</color>
+    
+    <!-- 标签背景颜色 -->
+    <color name="tag_bg">#E1F5FE</color>
+    
+    <!-- 性别相关颜色 -->
+    <color name="male_bg">#E3F2FD</color>
+    <color name="female_bg">#FCE4EC</color>
+    <color name="gray_bg">#EEEEEE</color>
+    
+    <!-- 状态颜色 -->
+    <color name="status_living">#4CAF50</color>
+    <color name="status_deceased">#9E9E9E</color>
+    
+    <!-- 添加灰色 -->
+    <color name="gray">#FF808080</color>
+    <color name="light_gray">#FFD3D3D3</color>
+    <color name="dark_gray">#FF404040</color>
+    
+    <!-- 如果需要更多灰色色调 -->
+    <color name="gray_100">#FFF5F5F5</color>
+    <color name="gray_200">#FFEEEEEE</color>
+    <color name="gray_300">#FFE0E0E0</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_500">#FF9E9E9E</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="gray_700">#FF616161</color>
+    <color name="gray_800">#FF424242</color>
+    <color name="gray_900">#FF212121</color>
 </resources>

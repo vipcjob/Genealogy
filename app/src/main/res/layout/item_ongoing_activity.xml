@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/TextAppearance.FamilyTree.Headline4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="张氏族谱整理工作" />
+
+        <TextView
+            android:id="@+id/text_organizer"
+            style="@style/TextAppearance.FamilyTree.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="组织者: 张文华" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_calendar"
+                app:tint="@color/text_secondary"
+                android:contentDescription="@string/date" />
+
+            <TextView
+                android:id="@+id/text_date"
+                style="@style/TextAppearance.FamilyTree.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="2023年3月1日 - 2023年5月31日" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_location"
+                app:tint="@color/text_secondary"
+                android:contentDescription="@string/location" />
+
+            <TextView
+                android:id="@+id/text_location"
+                style="@style/TextAppearance.FamilyTree.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                tools:text="线上" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_description"
+            style="@style/TextAppearance.FamilyTree.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            tools:text="我们正在进行张氏族谱的整理和数字化工作，请各位家族成员提供相关历史资料和照片。" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextAppearance.FamilyTree.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进度: " />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:progress="60"
+                android:progressTint="@color/primary" />
+
+            <TextView
+                android:id="@+id/text_progress"
+                style="@style/TextAppearance.FamilyTree.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="60%" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_details"
+            style="@style/Widget.FamilyTree.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:text="详情" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView> 

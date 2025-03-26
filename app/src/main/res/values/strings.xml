@@ -61,6 +61,8 @@
     <string name="edit_info">编辑资料</string>
     <string name="view_family_tree">查看家系图</string>
     <string name="no_members_found">未找到成员</string>
+    <string name="member_avatar">成员头像</string>
+    <string name="view_details">查看详情</string>
     
     <!-- 家族故事页面 -->
     <string name="add_story">添加故事</string>
@@ -73,11 +75,19 @@
     <string name="publish_date_format">发布于 %s</string>
     <string name="related_members">相关成员</string>
     <string name="story_detail">故事详情</string>
+    <string name="tags">标签</string>
+    <string name="story_author_format">作者：%s</string>
     
     <!-- 活动页面 -->
     <string name="add_activity">添加活动</string>
     <string name="date">日期</string>
     <string name="location">地点</string>
+    <string name="time">时间</string>
+    <string name="organizer">组织者</string>
+    <string name="activity_type">活动类型</string>
+    <string name="activity_description">活动描述</string>
+    <string name="participants">参与者</string>
+    <string name="activity_image">活动图片</string>
     <string name="upcoming_activities">即将举行</string>
     <string name="ongoing_activities">正在进行</string>
     <string name="completed_activities">已结束</string>
@@ -129,4 +139,10 @@
     <string name="menu_family_story">家族故事</string>
     <string name="menu_profile">我的</string>
     <string name="profile_avatar">个人头像</string>
+    
+    <!-- 标签页 -->
+    <string name="tab_tree_view">树状图</string>
+    <string name="tab_list_view">列表</string>
+    <string name="tab_generation_view">世代</string>
+    <string name="tab_filter_view">筛选</string>
 </resources>

@@ -6,20 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.familytree.R
 import com.example.familytree.data.model.Gender
 import com.example.familytree.databinding.FragmentFilterViewBinding
 import com.example.familytree.ui.familytree.FamilyTreeViewModel
 import com.example.familytree.ui.familytree.FamilyTreeViewModelFactory
-import com.google.android.material.chip.Chip
 
 class FilterViewFragment : Fragment() {
-    
+
     private var _binding: FragmentFilterViewBinding? = null
     private val binding get() = _binding!!
     
     private val viewModel: FamilyTreeViewModel by activityViewModels { 
         FamilyTreeViewModelFactory(requireActivity().application) 
+    }
+    
+    companion object {
+        fun newInstance(): FilterViewFragment {
+            return FilterViewFragment()
+        }
     }
     
     override fun onCreateView(
@@ -33,97 +37,100 @@ class FilterViewFragment : Fragment() {
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
-        setupQuickFilterChips()
-        setupGenerationChips()
-        setupBranchChips()
-        setupEraChips()
-        setupButtons()
+        setupFilterControls()
     }
     
-    private fun setupQuickFilterChips() {
-        binding.chipAll.setOnClickListener {
-            viewModel.setFilterIsAlive(null)
-            viewModel.setFilterGender(null)
-        }
-        
-        binding.chipAlive.setOnClickListener {
-            viewModel.setFilterIsAlive(true)
-            viewModel.setFilterGender(null)
-        }
-        
-        binding.chipDeceased.setOnClickListener {
-            viewModel.setFilterIsAlive(false)
-            viewModel.setFilterGender(null)
-        }
-        
+    private fun setupFilterControls() {
+        // 性别筛选
         binding.chipMale.setOnClickListener {
-            viewModel.setFilterGender(Gender.MALE)
-            viewModel.setFilterIsAlive(null)
+            viewModel.setGenderFilter(Gender.MALE)
         }
         
         binding.chipFemale.setOnClickListener {
-            viewModel.setFilterGender(Gender.FEMALE)
-            viewModel.setFilterIsAlive(null)
-        }
-    }
-    
-    private fun setupGenerationChips() {
-        binding.chipGenerationAll.setOnClickListener {
-            viewModel.setFilterGeneration(null)
+            viewModel.setGenderFilter(Gender.FEMALE)
         }
         
-        // 为每个世代Chip设置监听器
-        for (i in 1..6) {
-            val chipId = resources.getIdentifier("chip_generation_$i", "id", requireContext().packageName)
-            view?.findViewById<Chip>(chipId)?.setOnClickListener {
-                viewModel.setFilterGeneration(i)
-            }
+        binding.chipAll.setOnClickListener {
+            viewModel.clearGenderFilter()
         }
-    }
-    
-    private fun setupBranchChips() {
+        
+        // 生存状态筛选
+        binding.chipAlive.setOnClickListener {
+            viewModel.setAliveFilter(true)
+        }
+        
+        binding.chipDeceased.setOnClickListener {
+            viewModel.setAliveFilter(false)
+        }
+        
+        // 世代筛选
+        binding.chipGenerationAll.setOnClickListener {
+            viewModel.clearGenerationFilter()
+        }
+        
+        binding.chipGeneration1.setOnClickListener {
+            viewModel.setGenerationFilter(1)
+        }
+        
+        binding.chipGeneration2.setOnClickListener {
+            viewModel.setGenerationFilter(2)
+        }
+        
+        binding.chipGeneration3.setOnClickListener {
+            viewModel.setGenerationFilter(3)
+        }
+        
+        binding.chipGeneration4.setOnClickListener {
+            viewModel.setGenerationFilter(4)
+        }
+        
+        binding.chipGeneration5.setOnClickListener {
+            viewModel.setGenerationFilter(5)
+        }
+        
+        binding.chipGeneration6.setOnClickListener {
+            viewModel.setGenerationFilter(6)
+        }
+        
+        // 分支筛选
         binding.chipBranchAll.setOnClickListener {
-            viewModel.setFilterBranch(null)
+            viewModel.clearBranchFilter()
         }
         
         binding.chipBranchMingde.setOnClickListener {
-            viewModel.setFilterBranch("明德支")
+            viewModel.setBranchFilter("明德支")
         }
         
         binding.chipBranchMingli.setOnClickListener {
-            viewModel.setFilterBranch("明礼支")
+            viewModel.setBranchFilter("明礼支")
         }
         
         binding.chipBranchMingxin.setOnClickListener {
-            viewModel.setFilterBranch("明信支")
+            viewModel.setBranchFilter("明信支")
         }
-    }
-    
-    private fun setupEraChips() {
+        
+        // 年代筛选
         binding.chipEraAll.setOnClickListener {
-            // TODO: 实现按年代筛选逻辑
+            viewModel.clearEraFilter()
         }
         
         binding.chipEraQing.setOnClickListener {
-            // TODO: 实现按清朝年代筛选逻辑
+            viewModel.setEraFilter("清朝")
         }
         
         binding.chipEraRepublic.setOnClickListener {
-            // TODO: 实现按民国年代筛选逻辑
+            viewModel.setEraFilter("民国时期")
         }
         
         binding.chipEraPrc.setOnClickListener {
-            // TODO: 实现按新中国年代筛选逻辑
+            viewModel.setEraFilter("新中国成立后")
         }
-    }
-    
-    private fun setupButtons() {
+        
+        // 重置和应用按钮
         binding.buttonReset.setOnClickListener {
-            // 重置所有筛选
-            viewModel.resetFilters()
+            viewModel.resetAllFilters()
             
-            // 重置所有Chip状态
+            // 重置选中状态
             binding.chipAll.isChecked = true
             binding.chipGenerationAll.isChecked = true
             binding.chipBranchAll.isChecked = true
@@ -131,8 +138,7 @@ class FilterViewFragment : Fragment() {
         }
         
         binding.buttonApply.setOnClickListener {
-            // 切换到列表视图
-            viewModel.setCurrentTab(1)
+            viewModel.applyFilters()
         }
     }
     

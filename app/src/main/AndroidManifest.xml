@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.familytree">
 
     <application
         android:name=".FamilyTreeApplication"
@@ -24,6 +25,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- 成员详情页 -->
+        <activity
+            android:name=".ui.member.MemberDetailActivity"
+            android:exported="false" />
+            
+        <!-- 家谱树页 -->
+        <activity
+            android:name=".ui.familytree.FamilyTreeActivity"
+            android:exported="false" />
+            
+        <!-- 故事列表页 -->
+        <activity
+            android:name=".ui.story.FamilyStoryActivity"
+            android:exported="false" />
+            
+        <!-- 故事详情页 -->
+        <activity
+            android:name=".ui.story.StoryDetailActivity"
+            android:exported="false" />
+            
+        <!-- 活动列表页 -->
+        <activity
+            android:name=".ui.activity.FamilyActivityActivity"
+            android:exported="false" />
+            
+        <!-- 活动详情页 -->
+        <activity
+            android:name=".ui.activity.ActivityDetailActivity"
+            android:exported="false" />
+            
     </application>
 
 </manifest>

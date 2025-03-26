@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.familytree.R
 import com.example.familytree.databinding.FragmentListViewBinding
 import com.example.familytree.ui.familytree.FamilyTreeViewModel
 import com.example.familytree.ui.familytree.FamilyTreeViewModelFactory
+import com.example.familytree.ui.member.MemberDetailActivity
+import com.google.android.material.chip.Chip
 
 class ListViewFragment : Fragment() {
     
@@ -20,7 +23,13 @@ class ListViewFragment : Fragment() {
         FamilyTreeViewModelFactory(requireActivity().application) 
     }
     
-    private lateinit var adapter: MemberAdapter
+    private lateinit var adapter: FamilyMemberAdapter
+    
+    companion object {
+        fun newInstance(): ListViewFragment {
+            return ListViewFragment()
+        }
+    }
     
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,27 +44,25 @@ class ListViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         
         setupRecyclerView()
-        setupGenerationNav()
+        setupGenerationChips()
         observeViewModel()
     }
     
     private fun setupRecyclerView() {
-        adapter = MemberAdapter { member ->
-            // 设置焦点成员并切换到树状图视图
-            viewModel.setFocusMember(member.id)
-            viewModel.setCurrentTab(0)
+        adapter = FamilyMemberAdapter { member ->
+            startActivity(MemberDetailActivity.newIntent(requireContext(), member.id))
         }
         
         binding.recyclerViewMembers.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewMembers.adapter = adapter
     }
     
-    private fun setupGenerationNav() {
+    private fun setupGenerationChips() {
         binding.chipAll.setOnClickListener {
-            viewModel.setFilterGeneration(null)
+            viewModel.resetGenerationFilter()
         }
         
-        // 动态填充世代导航
+        // 观察所有成员数据以动态添加世代选择器
         viewModel.allMembers.observe(viewLifecycleOwner) { members ->
             if (members.isNotEmpty()) {
                 // 获取所有不同的世代
@@ -69,16 +76,13 @@ class ListViewFragment : Fragment() {
                 
                 // 为每个世代添加一个芯片
                 for (gen in generations) {
-                    val chip = layoutInflater.inflate(
-                        com.google.android.material.R.layout.material_time_chip,
-                        binding.chipGroupGenerations,
-                        false
-                    ) as com.google.android.material.chip.Chip
-                    
-                    chip.text = "第${gen}代"
-                    chip.id = View.generateViewId()
-                    chip.setOnClickListener {
-                        viewModel.setFilterGeneration(gen)
+                    val chip = Chip(requireContext()).apply {
+                        text = getString(R.string.generation_format_simple, gen)
+                        id = View.generateViewId()
+                        setOnClickListener {
+                            viewModel.setGenerationFilter(gen)
+                        }
+                        isCheckable = true
                     }
                     
                     binding.chipGroupGenerations.addView(chip)
@@ -93,7 +97,7 @@ class ListViewFragment : Fragment() {
             adapter.submitList(members)
             
             // 更新统计信息
-            binding.textMemberCount.text = "共 ${members.size} 人"
+            binding.textMemberCount.text = getString(R.string.member_count_format, members.size)
             
             if (members.isEmpty()) {
                 binding.recyclerViewMembers.visibility = View.GONE

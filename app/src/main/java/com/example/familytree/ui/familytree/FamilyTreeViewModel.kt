@@ -42,6 +42,8 @@ class FamilyTreeViewModel(application: Application) : AndroidViewModel(applicati
     private val filterGender = MutableStateFlow<Gender?>(null)
     private val filterGeneration = MutableStateFlow<Int?>(null)
     private val filterBranch = MutableStateFlow<String?>(null)
+    private val filterEra = MutableStateFlow<String?>(null)
+    private val searchQuery = MutableStateFlow<String?>(null)
 
     // 经过筛选的成员
     private val _filteredMembers = MutableLiveData<List<FamilyMember>>()
@@ -67,24 +69,53 @@ class FamilyTreeViewModel(application: Application) : AndroidViewModel(applicati
             loadFocusMember(id)
         }
 
-        // 应用筛选
+        // 筛选逻辑
         viewModelScope.launch {
-            combine(
-                filterIsAlive,
-                filterGender,
-                filterGeneration,
-                filterBranch
-            ) { isAlive, gender, generation, branch ->
+            filterIsAlive.combine(filterGender) { isAlive, gender ->
+                Pair(isAlive, gender)
+            }.combine(filterGeneration) { pair, generation ->
+                Triple(pair.first, pair.second, generation)
+            }.combine(filterBranch) { triple, branch ->
+                Quadruple(triple.first, triple.second, triple.third, branch)
+            }.combine(filterEra) { quad, era ->
+                Quintuple(quad.first, quad.second, quad.third, quad.fourth, era)
+            }.combine(searchQuery) { quint, query ->
+                // 应用所有筛选条件
                 allMembers.value?.filter { member ->
-                    (isAlive == null || member.isAlive == isAlive) &&
-                        (gender == null || member.gender == gender) &&
-                        (generation == null || member.generation == generation) &&
-                        (branch == null || member.branch == branch)
+                    (quint.first == null || member.isAlive == quint.first) &&
+                    (quint.second == null || member.gender == quint.second) &&
+                    (quint.third == null || member.generation == quint.third) &&
+                    (quint.fourth == null || member.branch == quint.fourth) &&
+                    (quint.fifth == null || isInEra(member, quint.fifth)) &&
+                    (query == null || matchesSearch(member, query))
                 } ?: emptyList()
             }.collect { filtered ->
                 _filteredMembers.postValue(filtered)
             }
         }
+    }
+
+    // 自定义数据类，用于组合多个筛选条件
+    private data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
+    private data class Quintuple<A, B, C, D, E>(val first: A, val second: B, val third: C, val fourth: D, val fifth: E)
+
+    // 根据年代筛选成员
+    private fun isInEra(member: FamilyMember, era: String): Boolean {
+        return when (era) {
+            "清朝" -> member.birthYear in 1644..1911
+            "民国时期" -> member.birthYear in 1912..1949
+            "新中国成立后" -> member.birthYear ?: 0 >= 1950
+            else -> false
+        }
+    }
+
+    // 根据搜索词匹配成员
+    private fun matchesSearch(member: FamilyMember, query: String): Boolean {
+        if (query.isEmpty()) return true
+        val lowercaseQuery = query.lowercase()
+        return member.name.lowercase().contains(lowercaseQuery) ||
+               member.occupation?.lowercase()?.contains(lowercaseQuery) == true ||
+               member.branch?.lowercase()?.contains(lowercaseQuery) == true
     }
 
     fun setCurrentTab(position: Int) {
@@ -167,6 +198,63 @@ class FamilyTreeViewModel(application: Application) : AndroidViewModel(applicati
         filterGender.value = null
         filterGeneration.value = null
         filterBranch.value = null
+        filterEra.value = null
+        searchQuery.value = null
+    }
+
+    // 为FilterViewFragment添加的方法
+    fun setGenderFilter(gender: Gender) {
+        filterGender.value = gender
+    }
+
+    fun setAliveFilter(isAlive: Boolean) {
+        filterIsAlive.value = isAlive
+    }
+
+    fun setGenerationFilter(generation: Int) {
+        filterGeneration.value = generation
+    }
+
+    fun setBranchFilter(branch: String) {
+        filterBranch.value = branch
+    }
+
+    fun setEraFilter(era: String) {
+        filterEra.value = era
+    }
+
+    fun clearGenderFilter() {
+        filterGender.value = null
+    }
+
+    fun clearGenerationFilter() {
+        filterGeneration.value = null
+    }
+
+    fun clearBranchFilter() {
+        filterBranch.value = null
+    }
+
+    fun clearEraFilter() {
+        filterEra.value = null
+    }
+
+    fun resetAllFilters() {
+        resetFilters()
+    }
+
+    fun applyFilters() {
+        // 筛选已经自动应用，这个方法只是为了与UI交互
+    }
+
+    // 为GenerationViewFragment添加的方法
+    fun filterByGeneration(generation: Int) {
+        filterGeneration.value = generation
+    }
+
+    // 为ListViewFragment添加的方法
+    fun resetGenerationFilter() {
+        filterGeneration.value = null
     }
 }
 

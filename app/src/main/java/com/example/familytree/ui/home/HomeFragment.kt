@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.familytree.R
 import com.example.familytree.databinding.FragmentHomeBinding
+import com.example.familytree.ui.activity.FamilyActivityActivity
+import com.example.familytree.ui.familytree.FamilyTreeActivity
+import com.example.familytree.ui.story.FamilyStoryActivity
 import com.example.familytree.util.SVGUtils
 
 class HomeFragment : Fragment() {
@@ -64,31 +66,34 @@ class HomeFragment : Fragment() {
     private fun setupClickListeners() {
         // 功能模块点击
         binding.apply {
-//            cardFamilyTree.setOnClickListener {
-//                findNavController().navigate(R.id.navigation_family_tree)
-//            }
-//
-//            cardFamilyStory.setOnClickListener {
-//                findNavController().navigate(R.id.navigation_family_story)
-//            }
-//
-//            cardFamilyActivity.setOnClickListener {
-//                findNavController().navigate(R.id.action_to_family_activity)
-//            }
-//
-//            cardWorshipCalendar.setOnClickListener {
-//                findNavController().navigate(R.id.action_to_calendar)
-//            }
-//
-//            // 查看全部按钮
-//            textViewAll.setOnClickListener {
-//                // TODO: 导航到全部动态页面
-//            }
-//
-//            // 悬浮按钮
-//            fabAdd.setOnClickListener {
-//                // TODO: 显示添加选项菜单
-//            }
+            moduleFamilyTree.setOnClickListener {
+                startActivity(FamilyTreeActivity.newIntent(requireContext()))
+            }
+
+            moduleFamilyStory.setOnClickListener {
+                startActivity(FamilyStoryActivity.newIntent(requireContext()))
+            }
+
+            moduleFamilyActivity.setOnClickListener {
+                startActivity(FamilyActivityActivity.newIntent(requireContext()))
+            }
+
+            moduleFamilyAlbum.setOnClickListener {
+                // TODO: 启动祭祖日历活动
+            }
+
+            // 查看全部按钮
+            textViewAll.setOnClickListener {
+                // TODO: 跳转到全部动态页面
+            }
+            
+            moduleAddMember.setOnClickListener {
+                // TODO: 跳转到添加成员页面
+            }
+            
+            moduleFamilyStatistics.setOnClickListener {
+                // TODO: 跳转到家族统计页面
+            }
         }
     }
 

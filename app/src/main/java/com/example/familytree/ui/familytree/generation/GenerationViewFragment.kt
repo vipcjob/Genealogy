@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.familytree.databinding.FragmentGenerationViewBinding
 import com.example.familytree.ui.familytree.FamilyTreeViewModel
 import com.example.familytree.ui.familytree.FamilyTreeViewModelFactory
+import com.example.familytree.ui.member.MemberDetailActivity
 
 class GenerationViewFragment : Fragment() {
     
@@ -21,6 +22,12 @@ class GenerationViewFragment : Fragment() {
     }
     
     private lateinit var adapter: GenerationAdapter
+    
+    companion object {
+        fun newInstance(): GenerationViewFragment {
+            return GenerationViewFragment()
+        }
+    }
     
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,10 +47,8 @@ class GenerationViewFragment : Fragment() {
     
     private fun setupRecyclerView() {
         adapter = GenerationAdapter { generation ->
-            // 按世代筛选
-            viewModel.setFilterGeneration(generation)
-            // 切换到列表视图
-            viewModel.setCurrentTab(1)
+            // 按世代筛选并跳转到列表页
+            viewModel.filterByGeneration(generation)
         }
         
         binding.recyclerGenerations.layoutManager = LinearLayoutManager(requireContext())
@@ -51,25 +56,22 @@ class GenerationViewFragment : Fragment() {
     }
     
     private fun observeViewModel() {
+        // 观察全部成员数据
         viewModel.allMembers.observe(viewLifecycleOwner) { members ->
-            if (members.isNotEmpty()) {
-                // 按世代分组
-                val generationGroups = members.groupBy { it.generation }
-                    .mapValues { entry -> entry.value.size }
-                    .toList()
-                    .sortedBy { (generation, _) -> generation }
+            if (members.isEmpty()) {
+                // 处理空数据状态
+                binding.cardGenerationStats.visibility = View.GONE
+            } else {
+                binding.cardGenerationStats.visibility = View.VISIBLE
                 
-                // 更新统计信息
-                binding.textGenerationCount.text = "共${generationGroups.size}代"
-                binding.textTotalCount.text = "总人数：${members.size}人"
+                // 统计信息
+                val generations = members.groupBy { it.generation }
+                binding.textGenerationCount.text = generations.size.toString()
+                binding.textTotalCount.text = members.size.toString()
+                binding.textLivingCount.text = members.count { it.isAlive }.toString()
                 
-                // 计算男女比例
-                val maleCount = members.count { it.gender == com.example.familytree.data.model.Gender.MALE }
-                val femaleCount = members.count { it.gender == com.example.familytree.data.model.Gender.FEMALE }
-                //binding.textGenderRatio.text = "男女比例：${maleCount}:${femaleCount}"
-                
-                // 更新适配器
-                adapter.submitList(generationGroups)
+                // 提交给适配器
+                adapter.submitGenerations(generations)
             }
         }
     }

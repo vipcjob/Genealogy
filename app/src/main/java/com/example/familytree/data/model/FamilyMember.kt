@@ -2,6 +2,7 @@ package com.example.familytree.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.Calendar
 import java.util.Date
 
 /**
@@ -29,7 +30,21 @@ data class FamilyMember(
     val branch: String?, // 支系，例如"明德支"
     val avatarUrl: String?,
     val notes: String?
-)
+) {
+    // 获取出生年份
+    val birthYear: Int?
+        get() = birthDate?.let {
+            val calendar = Calendar.getInstance().apply { time = it }
+            calendar.get(Calendar.YEAR)
+        }
+    
+    // 获取去世年份
+    val deathYear: Int?
+        get() = deathDate?.let {
+            val calendar = Calendar.getInstance().apply { time = it }
+            calendar.get(Calendar.YEAR)
+        }
+}
 
 enum class Gender {
     MALE, FEMALE, OTHER

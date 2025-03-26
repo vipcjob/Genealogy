@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="108"
+    height="108"
+    viewBox="0 0 108 108">
+    
+    <!-- 树干 -->
+    <path
+        fill="#795548"
+        d="M54,80 L54,100 L62,100 L62,80 Z"/>
+    
+    <!-- 树枝 -->
+    <path
+        fill="#4CAF50"
+        d="M30,40 L54,80 L78,40 Z"/>
+    
+    <!-- 树叶 -->
+    <path
+        fill="#81C784"
+        d="M20,30 L54,70 L88,30 Z"/>
+    
+    <!-- 装饰性圆点（代表家族成员） -->
+    <circle
+        fill="#FFFFFF"
+        cx="54"
+        cy="38"
+        r="3"/>
+    <circle
+        fill="#FFFFFF"
+        cx="35"
+        cy="48"
+        r="3"/>
+    <circle
+        fill="#FFFFFF"
+        cx="73"
+        cy="48"
+        r="3"/>
+</svg> 

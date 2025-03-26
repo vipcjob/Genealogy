@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    width="108"
+    height="108"
+    viewBox="0 0 108 108">
+    
+    <!-- 外圈 -->
+    <circle
+        fill="#E3F2FD"
+        cx="54"
+        cy="54"
+        r="48"/>
+    
+    <!-- 中心圆 -->
+    <circle
+        fill="#2196F3"
+        cx="54"
+        cy="54"
+        r="20"/>
+    
+    <!-- 连接线 -->
+    <line
+        stroke="#64B5F6"
+        stroke-width="2"
+        x1="54"
+        y1="34"
+        x2="54"
+        y2="74"/>
+    <line
+        stroke="#64B5F6"
+        stroke-width="2"
+        x1="34"
+        y1="54"
+        x2="74"
+        y2="54"/>
+    
+    <!-- 装饰性圆点 -->
+    <circle
+        fill="#FFFFFF"
+        cx="54"
+        cy="37"
+        r="3"/>
+    <circle
+        fill="#FFFFFF"
+        cx="54"
+        cy="71"
+        r="3"/>
+    <circle
+        fill="#FFFFFF"
+        cx="34"
+        cy="57"
+        r="3"/>
+    <circle
+        fill="#FFFFFF"
+        cx="74"
+        cy="57"
+        r="3"/>
+</svg> 

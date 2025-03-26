@@ -21,6 +21,20 @@ class TreeViewFragment : Fragment() {
     
     private var scaleFactor = 1.0f
     
+    companion object {
+        private const val ARG_MEMBER_ID = "arg_member_id"
+        
+        fun newInstance(memberId: String? = null): TreeViewFragment {
+            return TreeViewFragment().apply {
+                arguments = Bundle().apply {
+                    if (memberId != null) {
+                        putString(ARG_MEMBER_ID, memberId)
+                    }
+                }
+            }
+        }
+    }
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,6 +46,11 @@ class TreeViewFragment : Fragment() {
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
+        // 获取成员ID并设置到ViewModel
+        arguments?.getString(ARG_MEMBER_ID)?.let { memberId ->
+            viewModel.setFocusMember(memberId)
+        }
         
         setupObservers()
         setupZoomControls()

@@ -2,65 +2,58 @@ package com.example.familytree.ui.familytree.generation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.familytree.R
+import com.example.familytree.data.model.FamilyMember
 import com.example.familytree.databinding.ItemGenerationBinding
 
 class GenerationAdapter(
     private val onGenerationClick: (Int) -> Unit
-) : ListAdapter<Pair<Int, Int>, GenerationAdapter.GenerationViewHolder>(GenerationDiffCallback()) {
+) : RecyclerView.Adapter<GenerationAdapter.GenerationViewHolder>() {
+    
+    private var generations: Map<Int, List<FamilyMember>> = emptyMap()
+    private var generationKeys: List<Int> = emptyList()
+    
+    fun submitGenerations(generations: Map<Int, List<FamilyMember>>) {
+        this.generations = generations
+        this.generationKeys = generations.keys.toList().sorted()
+        notifyDataSetChanged()
+    }
+    
+    override fun getItemCount() = generationKeys.size
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GenerationViewHolder {
         val binding = ItemGenerationBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
+            LayoutInflater.from(parent.context), parent, false
         )
         return GenerationViewHolder(binding)
     }
     
     override fun onBindViewHolder(holder: GenerationViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val generation = generationKeys[position]
+        val members = generations[generation] ?: emptyList()
+        holder.bind(generation, members)
     }
     
     inner class GenerationViewHolder(
         private val binding: ItemGenerationBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         
-        fun bind(generationData: Pair<Int, Int>) {
-            val (generation, count) = generationData
-            
-            binding.textGeneration.text = binding.root.context.getString(
-                R.string.generation_format,
-                generation
-            )
-            binding.textCount.text = "$count 人"
-            
-            // 设置进度条
-            binding.progressBar.max = 100
-            binding.progressBar.progress = getProgressValue(count)
-            
-            // 设置点击事件
+        init {
             binding.root.setOnClickListener {
-                onGenerationClick(generation)
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onGenerationClick(generationKeys[position])
+                }
             }
         }
         
-        private fun getProgressValue(count: Int): Int {
-            // 根据人数计算进度值，上限为100
-            return minOf(count * 5, 100)
-        }
-    }
-    
-    class GenerationDiffCallback : DiffUtil.ItemCallback<Pair<Int, Int>>() {
-        override fun areItemsTheSame(oldItem: Pair<Int, Int>, newItem: Pair<Int, Int>): Boolean {
-            return oldItem.first == newItem.first
-        }
-        
-        override fun areContentsTheSame(oldItem: Pair<Int, Int>, newItem: Pair<Int, Int>): Boolean {
-            return oldItem == newItem
+        fun bind(generation: Int, members: List<FamilyMember>) {
+            binding.textGeneration.text = "第${generation}代"
+            binding.textCount.text = "${members.size}人"
+            
+            // 设置进度条
+            val progress = minOf(members.size * 5, 100) // 简单计算进度值
+            binding.progressBar.progress = progress
         }
     }
 } 

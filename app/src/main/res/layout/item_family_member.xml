@@ -31,7 +31,7 @@
 
             <TextView
                 android:id="@+id/text_name"
-                style="@style/TextAppearance.FamilyTree.Headline5"
+                style="@style/TextAppearance.Genealogy.Headline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="张三" />
@@ -44,7 +44,7 @@
 
                 <TextView
                     android:id="@+id/text_generation"
-                    style="@style/TextAppearance.FamilyTree.Body2"
+                    style="@style/TextAppearance.Genealogy.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -52,7 +52,7 @@
 
                 <TextView
                     android:id="@+id/text_birth"
-                    style="@style/TextAppearance.FamilyTree.Body2"
+                    style="@style/TextAppearance.Genealogy.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="出生: 1960" />
@@ -60,7 +60,7 @@
 
             <TextView
                 android:id="@+id/text_death_info"
-                style="@style/TextAppearance.FamilyTree.Body2"
+                style="@style/TextAppearance.Genealogy.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

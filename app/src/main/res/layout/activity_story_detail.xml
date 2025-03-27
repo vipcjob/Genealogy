@@ -34,7 +34,7 @@
             <!-- 标题 -->
             <TextView
                 android:id="@+id/text_title"
-                style="@style/TextAppearance.FamilyTree.Headline4"
+                style="@style/TextAppearance.Genealogy.Headline4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -48,7 +48,7 @@
 
                 <TextView
                     android:id="@+id/text_author"
-                    style="@style/TextAppearance.FamilyTree.Body2"
+                    style="@style/TextAppearance.Genealogy.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_secondary"
@@ -61,7 +61,7 @@
 
                 <TextView
                     android:id="@+id/text_date"
-                    style="@style/TextAppearance.FamilyTree.Body2"
+                    style="@style/TextAppearance.Genealogy.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/text_secondary"
@@ -85,7 +85,7 @@
             <!-- 内容 -->
             <TextView
                 android:id="@+id/text_content"
-                style="@style/TextAppearance.FamilyTree.Body1"
+                style="@style/TextAppearance.Genealogy.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

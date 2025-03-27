@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/text_member_count"
-                style="@style/TextAppearance.FamilyTree.Headline4"
+                style="@style/TextAppearance.Genealogy.Headline4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="共 42 人" />
@@ -82,14 +82,14 @@
             android:contentDescription="@string/no_members_found" />
 
         <TextView
-            style="@style/TextAppearance.FamilyTree.Headline4"
+            style="@style/TextAppearance.Genealogy.Headline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/no_members_found" />
 
         <TextView
-            style="@style/TextAppearance.FamilyTree.Body1"
+            style="@style/TextAppearance.Genealogy.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

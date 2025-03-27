@@ -11,9 +11,22 @@ buildscript {
     }
     
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.0'
+        classpath 'com.android.tools.build:gradle:7.4.2'  // 降级到与Java 11兼容的版本
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.7.6"  // 使用最新的稳定版本
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"  // 降级到更兼容的版本
+    }
+}
+
+// 设置所有项目的通用配置
+allprojects {
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
     }
 } 

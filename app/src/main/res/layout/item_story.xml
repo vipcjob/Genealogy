@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/text_title"
-                style="@style/TextAppearance.FamilyTree.Headline4"
+                style="@style/TextAppearance.Genealogy.Headline4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -30,7 +30,7 @@
 
             <TextView
                 android:id="@+id/text_type"
-                style="@style/TextAppearance.FamilyTree.Tag"
+                style="@style/TextAppearance.Genealogy.Tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_tag"
@@ -41,7 +41,7 @@
 
         <TextView
             android:id="@+id/text_date"
-            style="@style/TextAppearance.FamilyTree.Body2"
+            style="@style/TextAppearance.Genealogy.Body2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -49,7 +49,7 @@
 
         <TextView
             android:id="@+id/text_content"
-            style="@style/TextAppearance.FamilyTree.Body1"
+            style="@style/TextAppearance.Genealogy.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -62,11 +62,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="相关人物："
-            style="@style/TextAppearance.FamilyTree.Caption" />
+            style="@style/TextAppearance.Genealogy.Caption" />
 
         <TextView
             android:id="@+id/text_related_members"
-            style="@style/TextAppearance.FamilyTree.Body2"
+            style="@style/TextAppearance.Genealogy.Body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

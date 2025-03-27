@@ -31,7 +31,7 @@
 
             <!-- 即将开始的活动 -->
             <TextView
-                style="@style/TextAppearance.FamilyTree.Headline3"
+                style="@style/TextAppearance.Genealogy.Headline3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -62,7 +62,7 @@
                 tools:visibility="visible">
 
                 <TextView
-                    style="@style/TextAppearance.FamilyTree.Body1"
+                    style="@style/TextAppearance.Genealogy.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="暂无即将开始的活动" />
@@ -70,7 +70,7 @@
 
             <!-- 正在进行的活动 -->
             <TextView
-                style="@style/TextAppearance.FamilyTree.Headline3"
+                style="@style/TextAppearance.Genealogy.Headline3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -101,7 +101,7 @@
                 tools:visibility="visible">
 
                 <TextView
-                    style="@style/TextAppearance.FamilyTree.Body1"
+                    style="@style/TextAppearance.Genealogy.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="暂无正在进行的活动" />
@@ -109,7 +109,7 @@
 
             <!-- 已结束的活动 -->
             <TextView
-                style="@style/TextAppearance.FamilyTree.Headline3"
+                style="@style/TextAppearance.Genealogy.Headline3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -140,7 +140,7 @@
                 tools:visibility="visible">
 
                 <TextView
-                    style="@style/TextAppearance.FamilyTree.Body1"
+                    style="@style/TextAppearance.Genealogy.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="暂无已结束的活动" />

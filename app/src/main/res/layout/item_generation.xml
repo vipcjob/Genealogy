@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/text_generation"
-                style="@style/TextAppearance.FamilyTree.Headline4"
+                style="@style/TextAppearance.Genealogy.Headline4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/text_count"
-                style="@style/TextAppearance.FamilyTree.Subtitle1"
+                style="@style/TextAppearance.Genealogy.Subtitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3 人" />

@@ -32,7 +32,7 @@
 
                 <TextView
                     android:id="@+id/text_username"
-                    style="@style/TextAppearance.FamilyTree.Headline4"
+                    style="@style/TextAppearance.Genealogy.Headline4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/image_avatar"
@@ -43,7 +43,7 @@
 
                 <TextView
                     android:id="@+id/text_identity"
-                    style="@style/TextAppearance.FamilyTree.Body2"
+                    style="@style/TextAppearance.Genealogy.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_username"
@@ -79,7 +79,7 @@
                         android:contentDescription="@string/my_profile" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -117,7 +117,7 @@
                         android:contentDescription="@string/my_family" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -155,7 +155,7 @@
                         android:contentDescription="@string/my_favorites" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -193,7 +193,7 @@
                         android:contentDescription="@string/my_contributions" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -231,7 +231,7 @@
                         android:contentDescription="@string/settings" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -269,7 +269,7 @@
                         android:contentDescription="@string/help_feedback" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -307,7 +307,7 @@
                         android:contentDescription="@string/about" />
 
                     <TextView
-                        style="@style/TextAppearance.FamilyTree.Subtitle1"
+                        style="@style/TextAppearance.Genealogy.Subtitle1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -330,7 +330,7 @@
 
             <!-- 版本信息 -->
             <TextView
-                style="@style/TextAppearance.FamilyTree.Caption"
+                style="@style/TextAppearance.Genealogy.Caption"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="24dp"

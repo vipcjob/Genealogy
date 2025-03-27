@@ -14,7 +14,7 @@
         <!-- 世代统计卡片 -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_generation_stats"
-            style="@style/Widget.FamilyTree.Card"
+            style="@style/Widget.Genealogy.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -36,7 +36,7 @@
 
                     <TextView
                         android:id="@+id/text_generation_count"
-                        style="@style/TextAppearance.FamilyTree.Headline1"
+                        style="@style/TextAppearance.Genealogy.Headline1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
@@ -47,7 +47,7 @@
 
                     <TextView
                         android:id="@+id/text_generation_label"
-                        style="@style/TextAppearance.FamilyTree.Body2"
+                        style="@style/TextAppearance.Genealogy.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -80,7 +80,7 @@
 
                     <TextView
                         android:id="@+id/text_total_count"
-                        style="@style/TextAppearance.FamilyTree.Headline1"
+                        style="@style/TextAppearance.Genealogy.Headline1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
@@ -91,7 +91,7 @@
 
                     <TextView
                         android:id="@+id/text_total_label"
-                        style="@style/TextAppearance.FamilyTree.Body2"
+                        style="@style/TextAppearance.Genealogy.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -124,7 +124,7 @@
 
                     <TextView
                         android:id="@+id/text_living_count"
-                        style="@style/TextAppearance.FamilyTree.Headline1"
+                        style="@style/TextAppearance.Genealogy.Headline1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
@@ -135,7 +135,7 @@
 
                     <TextView
                         android:id="@+id/text_living_label"
-                        style="@style/TextAppearance.FamilyTree.Body2"
+                        style="@style/TextAppearance.Genealogy.Body2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"

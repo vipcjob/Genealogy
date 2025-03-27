@@ -6,12 +6,12 @@
         <item name="cornerSize">50%</item>
     </style>
     <!-- 基础应用主题 -->
-    <style name="Theme.FamilyTree" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.Genealogy" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorPrimaryDark">@color/primary</item>
         <item name="colorAccent">@color/accent</item>
         <item name="android:windowBackground">@color/background</item>
-        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:statusBarColor">@color/primary</item>
         <item name="android:navigationBarColor">@color/primary_dark</item>
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSurface">@android:color/white</item>
@@ -21,62 +21,62 @@
     </style>
 
     <!-- 启动屏主题 -->
-    <style name="Theme.FamilyTree.Splash" parent="Theme.FamilyTree">
+    <style name="Theme.Genealogy.Splash" parent="Theme.Genealogy">
         <item name="android:windowBackground">@color/primary</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <!-- 文本样式 -->
-    <style name="TextAppearance.FamilyTree.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+    <style name="TextAppearance.Genealogy.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+    <style name="TextAppearance.Genealogy.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+    <style name="TextAppearance.Genealogy.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+    <style name="TextAppearance.Genealogy.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/primary_text</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Body1" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="TextAppearance.Genealogy.Body1" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/primary_text</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Body2" parent="TextAppearance.MaterialComponents.Body2">
+    <style name="TextAppearance.Genealogy.Body2" parent="TextAppearance.MaterialComponents.Body2">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/secondary_text</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Caption" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Genealogy.Caption" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/secondary_text</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Tag" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Genealogy.Tag" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/primary</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Button" parent="TextAppearance.MaterialComponents.Button">
+    <style name="TextAppearance.Genealogy.Button" parent="TextAppearance.MaterialComponents.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
     <!-- 按钮样式 -->
-    <style name="Widget.FamilyTree.Button" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.Genealogy.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textAllCaps">false</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
@@ -84,7 +84,7 @@
         <item name="cornerRadius">8dp</item>
     </style>
 
-    <style name="Widget.FamilyTree.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="Widget.Genealogy.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:paddingEnd">16dp</item>
@@ -94,7 +94,7 @@
     </style>
 
     <!-- 工具栏样式 -->
-    <style name="Widget.FamilyTree.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+    <style name="Widget.Genealogy.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="titleTextColor">@android:color/white</item>
         <item name="subtitleTextColor">@android:color/white</item>
@@ -102,59 +102,59 @@
     </style>
 
     <!-- TabLayout样式 -->
-    <style name="Widget.FamilyTree.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+    <style name="Widget.Genealogy.TabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="tabIndicatorColor">@color/primary</item>
         <item name="tabSelectedTextColor">@color/primary</item>
         <item name="tabTextColor">@color/secondary_text</item>
-        <item name="tabTextAppearance">@style/TextAppearance.FamilyTree.Tab</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Genealogy.Tab</item>
         <item name="tabGravity">fill</item>
         <item name="tabMode">fixed</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.Tab" parent="TextAppearance.MaterialComponents.Button">
+    <style name="TextAppearance.Genealogy.Tab" parent="TextAppearance.MaterialComponents.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
     <!-- 卡片样式 -->
-    <style name="Widget.FamilyTree.Card" parent="Widget.MaterialComponents.CardView">
+    <style name="Widget.Genealogy.Card" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">8dp</item>
         <item name="cardElevation">2dp</item>
         <item name="contentPadding">16dp</item>
     </style>
 
     <!-- 底部导航栏样式 -->
-    <style name="Widget.FamilyTree.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+    <style name="Widget.Genealogy.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemIconTint">@color/bottom_nav_item_color</item>
         <item name="itemTextColor">@color/bottom_nav_item_color</item>
-        <item name="itemTextAppearanceActive">@style/TextAppearance.FamilyTree.BottomNavigationView.Active</item>
-        <item name="itemTextAppearanceInactive">@style/TextAppearance.FamilyTree.BottomNavigationView.Inactive</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Genealogy.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Genealogy.BottomNavigationView.Inactive</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Genealogy.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="TextAppearance.FamilyTree.BottomNavigationView.Inactive" parent="TextAppearance.MaterialComponents.Caption">
+    <style name="TextAppearance.Genealogy.BottomNavigationView.Inactive" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">12sp</item>
     </style>
 
     <!-- 搜索视图样式 -->
-    <style name="Widget.FamilyTree.SearchView" parent="Widget.AppCompat.SearchView">
+    <style name="Widget.Genealogy.SearchView" parent="Widget.AppCompat.SearchView">
         <item name="queryBackground">@android:color/transparent</item>
         <item name="searchIcon">@drawable/ic_search</item>
         <item name="queryHint">@string/search_member</item>
     </style>
 
     <!-- 分隔线样式 -->
-    <style name="Widget.FamilyTree.Divider" parent="">
+    <style name="Widget.Genealogy.Divider" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/divider</item>
     </style>
 
     <!-- 大标题样式 -->
-    <style name="TextAppearance.FamilyTree.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+    <style name="TextAppearance.Genealogy.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textStyle">bold</item>

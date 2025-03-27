@@ -17,14 +17,14 @@
 
         <TextView
             android:id="@+id/text_title"
-            style="@style/TextAppearance.FamilyTree.Headline4"
+            style="@style/TextAppearance.Genealogy.Headline4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="2023年春节宗亲聚会" />
 
         <TextView
             android:id="@+id/text_organizer"
-            style="@style/TextAppearance.FamilyTree.Body2"
+            style="@style/TextAppearance.Genealogy.Body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -46,7 +46,7 @@
 
             <TextView
                 android:id="@+id/text_date"
-                style="@style/TextAppearance.FamilyTree.Body2"
+                style="@style/TextAppearance.Genealogy.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
 
             <TextView
                 android:id="@+id/text_location"
-                style="@style/TextAppearance.FamilyTree.Body2"
+                style="@style/TextAppearance.Genealogy.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -92,7 +92,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_details"
-                style="@style/Widget.FamilyTree.Button"
+                style="@style/Widget.Genealogy.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

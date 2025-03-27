@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">百家族谱</string>
+    <string name="app_tagline">传承千年 · 根脉永续</string>
     <string name="app_version">版本 1.0.0</string>
     
     <!-- 底部导航 -->

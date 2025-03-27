@@ -7,16 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#303F9F</color>
-    <color name="primary_light">#C5CAE9</color>
-    <color name="accent">#FF4081</color>
-    <color name="primary_text">#212121</color>
+    <color name="primary">#B92525</color>
+    <color name="primary_dark">#9E1F1F</color>
+    <color name="primary_light">#FFCDD2</color>
+    <color name="accent">#D4AF37</color>
+    <color name="primary_text">#333333</color>
     <color name="secondary_text">#757575</color>
     <color name="text_secondary">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
-    <color name="background">#F5F5F5</color>
+    <color name="background">#F8F8F8</color>
     <color name="surface">#FFFFFF</color>
     <color name="error">#CF6679</color>
     <color name="on_primary">#FFFFFF</color>
@@ -28,20 +28,21 @@
     <!-- 扩展颜色 -->
     <color name="text_primary">#333333</color>
     <color name="text_tertiary">#888888</color>
-    <color name="highlight">#FFB100</color>
+    <color name="text_light">#999999</color>
+    <color name="highlight">#D4AF37</color>
     <color name="highlight_background">#FFFAF0</color>
     <color name="success">#4CAF50</color>
     <color name="success_light">#E8F5E9</color>
     <color name="warning">#FF9800</color>
     <color name="warning_light">#FFF3E0</color>
     <color name="female">#E91E63</color>
-    <color name="male">#2196F3</color>
+    <color name="male">#B92525</color>
     
     <!-- 标签背景颜色 -->
-    <color name="tag_bg">#E1F5FE</color>
+    <color name="tag_bg">#FFF5F5</color>
     
     <!-- 性别相关颜色 -->
-    <color name="male_bg">#E3F2FD</color>
+    <color name="male_bg">#FFF5F5</color>
     <color name="female_bg">#FCE4EC</color>
     <color name="gray_bg">#EEEEEE</color>
     

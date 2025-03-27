@@ -14,17 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Genealogy"
         tools:targetApi="31">
+        
+        <!-- 启动页 -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Genealogy">
+            android:theme="@style/Theme.Genealogy.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Genealogy" />
         
         <!-- 成员详情页 -->
         <activity

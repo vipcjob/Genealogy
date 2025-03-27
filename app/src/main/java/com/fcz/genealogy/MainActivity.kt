@@ -1,6 +1,7 @@
 package com.fcz.genealogy
 
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,9 +51,12 @@ class MainActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(this, R.color.primary)
         
-        // 根据颜色的亮度决定状态栏图标是否使用深色
-        // 如果使用浅色主题，可以设置为true，表示状态栏使用深色图标
-        // window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        // 设置半透明效果
+        // window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        
+        // 由于使用深色主题，状态栏图标应为白色
+        val flags = window.decorView.systemUiVisibility
+        window.decorView.systemUiVisibility = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
     }
     
     private fun setupViewPager() {

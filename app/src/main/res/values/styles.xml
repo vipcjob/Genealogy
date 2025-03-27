@@ -12,7 +12,7 @@
         <item name="colorAccent">@color/accent</item>
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor">@color/primary</item>
-        <item name="android:navigationBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/primary</item>
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSurface">@android:color/white</item>
         <item name="colorOnPrimary">@android:color/white</item>
@@ -24,6 +24,14 @@
     <style name="Theme.Genealogy.Splash" parent="Theme.Genealogy">
         <item name="android:windowBackground">@color/primary</item>
         <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 无标题栏主题 -->
+    <style name="Theme.Genealogy.NoActionBar" parent="Theme.Genealogy">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <!-- 文本样式 -->
@@ -99,6 +107,14 @@
         <item name="titleTextColor">@android:color/white</item>
         <item name="subtitleTextColor">@android:color/white</item>
         <item name="colorControlNormal">@android:color/white</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Genealogy.Toolbar.Title</item>
+    </style>
+
+    <style name="TextAppearance.Genealogy.Toolbar.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <!-- TabLayout样式 -->
@@ -118,9 +134,11 @@
 
     <!-- 卡片样式 -->
     <style name="Widget.Genealogy.Card" parent="Widget.MaterialComponents.CardView">
-        <item name="cardCornerRadius">8dp</item>
+        <item name="cardCornerRadius">12dp</item>
         <item name="cardElevation">2dp</item>
         <item name="contentPadding">16dp</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="rippleColor">@color/primary_light</item>
     </style>
 
     <!-- 底部导航栏样式 -->
@@ -129,10 +147,15 @@
         <item name="itemTextColor">@color/bottom_nav_item_color</item>
         <item name="itemTextAppearanceActive">@style/TextAppearance.Genealogy.BottomNavigationView.Active</item>
         <item name="itemTextAppearanceInactive">@style/TextAppearance.Genealogy.BottomNavigationView.Inactive</item>
+        <item name="itemRippleColor">@color/primary_light</item>
+        <item name="elevation">8dp</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="backgroundTint">@android:color/white</item>
     </style>
 
     <style name="TextAppearance.Genealogy.BottomNavigationView.Active" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Genealogy.BottomNavigationView.Inactive" parent="TextAppearance.MaterialComponents.Caption">

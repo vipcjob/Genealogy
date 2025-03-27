@@ -51,12 +51,20 @@ class MainActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(this, R.color.primary)
         
-        // 设置半透明效果
-        // window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        // 设置导航栏为白色背景
+        window.navigationBarColor = ContextCompat.getColor(this, android.R.color.white)
         
-        // 由于使用深色主题，状态栏图标应为白色
-        val flags = window.decorView.systemUiVisibility
-        window.decorView.systemUiVisibility = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+        // 设置导航栏图标为暗色（因为导航栏背景是浅色）
+        val decorView = window.decorView
+        var flags = decorView.systemUiVisibility
+        
+        // 对于状态栏：深色背景上使用浅色图标
+        flags = flags and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
+        
+        // 对于导航栏：浅色背景上使用深色图标
+        flags = flags or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        
+        window.decorView.systemUiVisibility = flags
     }
     
     private fun setupViewPager() {

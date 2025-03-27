@@ -7,10 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary">#B92525</color>
-    <color name="primary_dark">#9E1F1F</color>
-    <color name="primary_light">#FFCDD2</color>
-    <color name="accent">#D4AF37</color>
+    <color name="primary">#1F5CBE</color>
+    <color name="primary_dark">#164A99</color>
+    <color name="primary_light">#D1E0FA</color>
+    <color name="accent">#FFB81C</color>
     <color name="primary_text">#333333</color>
     <color name="secondary_text">#757575</color>
     <color name="text_secondary">#757575</color>
@@ -36,13 +36,13 @@
     <color name="warning">#FF9800</color>
     <color name="warning_light">#FFF3E0</color>
     <color name="female">#E91E63</color>
-    <color name="male">#B92525</color>
+    <color name="male">#1F5CBE</color>
     
     <!-- 标签背景颜色 -->
-    <color name="tag_bg">#FFF5F5</color>
+    <color name="tag_bg">#EDF4FC</color>
     
     <!-- 性别相关颜色 -->
-    <color name="male_bg">#FFF5F5</color>
+    <color name="male_bg">#EDF4FC</color>
     <color name="female_bg">#FCE4EC</color>
     <color name="gray_bg">#EEEEEE</color>
     
